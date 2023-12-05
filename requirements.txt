@@ -1,9 +1,1 @@
-accelerate
-auto-gptq
-optimum
 poetry
-python-dotenv
-torch
-torchvision
-torchaudio
-transformers
