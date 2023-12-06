@@ -36,6 +36,16 @@ class Repository:
         return (self.path / key).is_file()
 
     def __getitem__(self, key: str):
+        """
+        Get content file in the repository
+
+        Args:
+            key (str): key to get the content
+
+        Returns:
+            str: content of the file
+        """
+
         full_path = self.path / key
         if not full_path.is_file():
             raise KeyError(f"File '{key}' could not be found in '{self.path}'")
