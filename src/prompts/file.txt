@@ -1,0 +1,29 @@
+You will output the content of each file necessary to achieve the goal, including ALL the code. Represent files like so:
+
+{FILENAME}
+```
+{CODE}
+```
+
+The following tokens must be replaced like so:
+{FILENAME} is the lowercased combined path and file name including the file extension
+{CODE} is the code in the file
+
+Example of a file representation:
+
+src/index.html
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+```
+
+Do not comment on what every file does. Please note that the code should be fully functional and runable. No placeholders
