@@ -1,4 +1,7 @@
 # 👩‍💻 Website Creation Agent
+
+This project focuses on leveraging Language Model capabilities, particularly Large Language Models (LLMs), for the development of an innovative Website Creation Agent. By harnessing the power of advanced natural language processing, this agent aims to streamline and simplify the process of creating websites.
+
 ## Prerequisites
 
 Make sure you have the following prerequisites installed:
