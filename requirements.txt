@@ -1,5 +1,0 @@
-accelerate
-auto-gptq
-optimum
-python-dotenv
-transformers
