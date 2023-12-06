@@ -2,7 +2,4 @@ accelerate
 auto-gptq
 optimum
 python-dotenv
-torch
-torchvision
-torchaudio
 transformers
