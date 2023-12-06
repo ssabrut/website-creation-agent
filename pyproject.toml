@@ -12,6 +12,7 @@ auto-gptq = "^0.5.1"
 optimum = "^1.14.1"
 python-dotenv = "^1.0.0"
 transformers = "^4.35.2"
+llama-index = "^0.9.12"
 
 
 [build-system]
