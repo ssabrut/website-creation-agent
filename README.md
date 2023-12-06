@@ -10,6 +10,8 @@ Make sure you have the following prerequisites installed:
 - Poetry ([python-poetry.org](https://python-poetry.org/docs/))
 - Pip ([pip.pypa.io](https://pip.pypa.io/en/stable/installation/))
 - PyTorch Nvidia CUDA 12.1 ([Windows tutorial](https://www.youtube.com/watch?v=Kp6c5v9iL84))
+- Vercel Account ([Vercel](https://vercel.com/))
+
 ## 🛠 Installation
 
 Clone the project and go to project directory
@@ -40,6 +42,7 @@ Then run the server using poetry
 ```bash
 poetry run python app.py
 ```
+
 ## 👩‍💻 Authors
 
 - [@ssabrut](https://github.com/ssabrut)
