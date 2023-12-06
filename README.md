@@ -1,8 +1,8 @@
-# 👩‍💻 Website Creation Agent
+# ⚡️ Website Creation Agent
 
 This project focuses on leveraging Language Model capabilities, particularly Large Language Models (LLMs), for the development of an innovative Website Creation Agent. By harnessing the power of advanced natural language processing, this agent aims to streamline and simplify the process of creating websites.
 
-## Prerequisites
+## 🚀 Prerequisites
 
 Make sure you have the following prerequisites installed:
 
@@ -10,7 +10,7 @@ Make sure you have the following prerequisites installed:
 - Poetry ([python-poetry.org](https://python-poetry.org/docs/))
 - Pip ([pip.pypa.io](https://pip.pypa.io/en/stable/installation/))
 - PyTorch Nvidia CUDA 12.1 ([Windows tutorial](https://www.youtube.com/watch?v=Kp6c5v9iL84))
-## Installation
+## 🛠 Installation
 
 Clone the project and go to project directory
 
@@ -40,7 +40,7 @@ Then run the server using poetry
 ```bash
 poetry run python app.py
 ```
-## Authors
+## 👩‍💻 Authors
 
 - [@ssabrut](https://github.com/ssabrut)
 
