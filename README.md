@@ -11,6 +11,7 @@ Make sure you have the following prerequisites installed:
 - Pip ([pip.pypa.io](https://pip.pypa.io/en/stable/installation/))
 - PyTorch Nvidia CUDA 12.1 ([Windows tutorial](https://www.youtube.com/watch?v=Kp6c5v9iL84))
 - Vercel Account ([Vercel](https://vercel.com/))
+- GitHub Account ([GitHub](https://github.com/))
 
 ## 🛠 Installation
 
