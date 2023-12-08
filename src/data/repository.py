@@ -1,6 +1,7 @@
 import shutil
 from typing import Union, Optional, Any
 from pathlib import Path
+from src.data.constraint_languages import CONSTRAINT_LANGUAGES
 
 
 class Repository:
@@ -101,3 +102,59 @@ class Repository:
             return self[key]
         except KeyError:
             return default
+
+    def get_supported_files(self, directory: Path):
+        """
+        Get supported files associated with supported languages in a directory
+
+        Args:
+            directory (Path): directory to check
+
+        Returns:
+            str: supported languages
+        """
+
+        valid_extensions = {
+            ext for lang in CONSTRAINT_LANGUAGES for ext in lang["extensions"]
+        }
+
+        file_paths = [
+            str(item)
+            for item in sorted(directory.rglob("*"))
+            if item.is_file() and item.suffix in valid_extensions
+        ]
+
+        return "\n".join(file_paths)
+
+    def get_all_files(self, directory: Path):
+        """
+        Get all file paths in a directory
+
+        Args:
+            directory (Path): directory to check
+
+        Returns:
+            str: file paths
+        """
+
+        file_paths = [
+            str(item) for item in sorted(directory.rglob("*")) if item.is_file()
+        ]
+
+        return "\n".join(file_paths)
+
+    def get_files_list(self, supported_files_only: bool = False):
+        """
+        Get all file paths in a directory
+
+        Args:
+            supported_files_only (bool, optional): whether to get only supported files. Defaults to False.
+
+        Returns:
+            str: file paths
+        """
+
+        if supported_files_only:
+            return self.get_supported_files(self.path)
+        else:
+            return self.get_all_files(self.path)
