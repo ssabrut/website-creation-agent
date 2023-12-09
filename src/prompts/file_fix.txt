@@ -1,4 +1,7 @@
-You will output the content of each file necessary to achieve the goal, including ALL the code. Represent files like so:
+Please fix any errors in the code above.
+
+You will output the content of each new or changed.
+Represent files like so:
 
 {FILENAME}
 ```
@@ -6,7 +9,7 @@ You will output the content of each file necessary to achieve the goal, includin
 ```
 
 The following tokens must be replaced like so:
-{FILENAME} is the lowercased combined path and file name including the file extension
+{FILENAME} is the lowercase combined path and file name includng the file extension
 {CODE} is the code in the file
 
 Example representation of a file:
@@ -26,4 +29,4 @@ src/index.html
 </html>
 ```
 
-Do not comment on what every file does. Please note that the code should be fully functional and runable. No placeholders
+Do not comment on what every file does. Please note that the code should be fully functional. No placeholders.
