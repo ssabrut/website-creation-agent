@@ -3,9 +3,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 model_name_or_path = "TheBloke/Llama-2-7b-Chat-GPTQ"
 print("[INFO] Loading model from HuggingFace model hub...")
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
-model = AutoModelForCausalLM.from_pretrained(model_name_or_path, device_map="cuda")
+model = AutoModelForCausalLM.from_pretrained(model_name_or_path)
 
-prompt_template = f"""Write a simple code for website using HTML"""
+prompt_template = f"""Write a landing page website for coffee shop using HTML and CSS"""
 
 print("[INFO] Generating response...")
 pipe = pipeline(

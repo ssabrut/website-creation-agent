@@ -1,4 +1,5 @@
 import shutil
+from dataclasses import dataclass
 from typing import Union, Optional, Any
 from pathlib import Path
 from src.data.constraint_languages import CONSTRAINT_LANGUAGES
@@ -6,10 +7,10 @@ from src.data.constraint_languages import CONSTRAINT_LANGUAGES
 
 class Repository:
     """
-    Repository class to store data as a files in a directory
+    Representing a file-based key-value store. In this context, keys correspond to filenames, and values correspond to the content of the files. It serves as a simple database where data is stored in files within a specified directory.
 
     Attributes:
-        path (Path): path to the directory to store data
+        path (Path): representing the directory path where the database files are stored.
     """
 
     def __init__(self, path: Union[str, Path]):
@@ -25,7 +26,7 @@ class Repository:
 
     def __contains__(self, key: str):
         """
-        Check if the key is in the repository
+        Check if a file (key) exists in the database
 
         Args:
             key (str): key to check
@@ -38,7 +39,7 @@ class Repository:
 
     def __getitem__(self, key: str):
         """
-        Get content file in the repository
+        Retrieve the content of a file (value) based on its name (key).
 
         Args:
             key (str): key to get the content
@@ -55,7 +56,7 @@ class Repository:
 
     def __setitem__(self, key: Union[str, Path], val: str):
         """
-        Set content file in the repository
+        Set or update the content of a file in the database.
 
         Args:
             key (Union[str, Path]): key to store the content
@@ -71,7 +72,7 @@ class Repository:
 
     def __delitem__(self, key: Union[str, Path]):
         """
-        Delete file in the repository
+        Delete a file or directory in the database.
 
         Args:
             key (Union[str, Path]): key to delete
@@ -158,3 +159,27 @@ class Repository:
             return self.get_supported_files(self.path)
         else:
             return self.get_all_files(self.path)
+
+
+@dataclass
+class Repositories:
+    """
+    Data class that aggregates multiple instances of Repository for different purposes. The instances represent different repositories, each with its own directory for storing files.
+
+    Attributes:
+        memory (Repository): repository for storing data in memory
+        logs (Repository): repository for storing logs
+        prompts (Repository): repository for storing prompts
+        input (Repository): repository for storing input
+        workspace (Repository): repository for storing workspace
+        archive (Repository): repository for storing archived data
+        metadata (Repository): repository for storing metadata
+    """
+
+    memory: Repository
+    logs: Repository
+    prompts: Repository
+    input: Repository
+    workspace: Repository
+    archive: Repository
+    metadata: Repository
