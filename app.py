@@ -1,23 +1,37 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+from os.path import expanduser
+from langchain_experimental.chat_models import Llama2Chat
+from langchain.llms import LlamaCpp
+from langchain.chains import LLMChain
+from langchain.memory import ConversationBufferMemory
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    MessagesPlaceholder,
+)
+from langchain.schema import SystemMessage
+import time
 
-model_name_or_path = "TheBloke/Llama-2-7b-Chat-GPTQ"
-print("[INFO] Loading model from HuggingFace model hub...")
-tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
-model = AutoModelForCausalLM.from_pretrained(model_name_or_path)
+template_messages = [
+    SystemMessage(content="You are a helpful assistant."),
+    MessagesPlaceholder(variable_name="chat_history"),
+    HumanMessagePromptTemplate.from_template("{text}"),
+]
+prompt_template = ChatPromptTemplate.from_messages(template_messages)
 
-prompt_template = f"""Write a landing page website for coffee shop using HTML and CSS"""
+model_path = expanduser("~/OneDrive/Documents/File/Semester 8/website-creation-agent/models/llama-2-13b-chat.Q4_0.gguf")
 
-print("[INFO] Generating response...")
-pipe = pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
-    max_new_tokens=512,
-    do_sample=True,
-    temperature=0.1,
-    top_p=0.95,
-    top_k=40,
-    repetition_penalty=1.1,
+llm = LlamaCpp(
+    model_path=model_path,
+    streaming=False,
 )
 
-print(pipe(prompt_template)[0]["generated_text"])
+model = Llama2Chat(llm=llm)
+memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+chain = LLMChain(llm=model, prompt=prompt_template, memory=memory)
+
+print(
+    chain.run(
+        text="What can I see in Vienna? Propose a few locations. Names only, no details."
+    )
+)
+toc = time.time()
