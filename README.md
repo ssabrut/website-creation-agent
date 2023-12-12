@@ -34,7 +34,7 @@ Install PyTorch dependencies
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
 
-Install Llama.cpp dependencies using GP
+Install Llama.cpp dependencies using GPU
 ```bash
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
 ```
