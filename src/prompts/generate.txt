@@ -3,7 +3,6 @@ First lay out the names of the core classes, functions, methods that will be nec
 
 {FILE_FORMAT}
 
-You will start with the "entrypoint" file, then go to the ones that are imported by that file, and so on. 
 Please note that the code should be fully functional. No placeholders.
 
 Follow a language and framework appropriate best practice file naming convention.
