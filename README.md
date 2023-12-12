@@ -34,6 +34,11 @@ Install PyTorch dependencies
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
 
+Install Llama.cpp dependencies using GP
+```bash
+CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
+```
+
 After that, install all necessary dependencies from using Poetry
 ```bash
 poetry install
