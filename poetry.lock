@@ -992,12 +992,12 @@ requests = ">=2,<3"
 
 [[package]]
 name = "llama-cpp-python"
-version = "0.2.20"
+version = "0.2.22"
 description = "Python bindings for the llama.cpp library"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "llama_cpp_python-0.2.20.tar.gz", hash = "sha256:a0ada1cb800ba4da60ea6ac4f7264b687a35412374e5af2c92e5b22852cdbafb"},
+    {file = "llama_cpp_python-0.2.22.tar.gz", hash = "sha256:29d3c5af374fa7b1c34abd4a76b9f477b50abb1d618872bb6cb1cb32841667bc"},
 ]
 
 [package.dependencies]
@@ -2882,6 +2882,20 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
+name = "wheel"
+version = "0.42.0"
+description = "A built-package format for Python"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "wheel-0.42.0-py3-none-any.whl", hash = "sha256:177f9c9b0d45c47873b619f5b650346d632cdc35fb5e4d25058e09c9e581433d"},
+    {file = "wheel-0.42.0.tar.gz", hash = "sha256:c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"},
+]
+
+[package.extras]
+test = ["pytest (>=6.0.0)", "setuptools (>=65)"]
+
+[[package]]
 name = "wrapt"
 version = "1.16.0"
 description = "Module for decorators, wrappers and monkey patching."
@@ -3183,4 +3197,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "1cd6d3df8a995471673295d1e35ac8e9526fc577f24cb8c8491c127b97c8d51a"
+content-hash = "2d3c12cf821693181ba12c7c1c8849201ebd6bb53e6f692d4c15c473776deee7"

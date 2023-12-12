@@ -14,8 +14,9 @@ python-dotenv = "^1.0.0"
 transformers = "^4.35.2"
 llama-index = "^0.9.12"
 langchain = "^0.0.348"
-llama-cpp-python = "^0.2.20"
 langchain-experimental = "^0.0.45"
+wheel = "^0.42.0"
+llama-cpp-python = "^0.2.22"
 
 
 [build-system]
